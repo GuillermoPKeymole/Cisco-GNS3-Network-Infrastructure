@@ -1,6 +1,5 @@
-===============================
 Base Images and Virtual Machines
-===============================
+=============================
 
 This folder contains all system images and virtual machines required to run the GNS3 Enterprise Network Project.
 
