@@ -1,90 +1,80 @@
-# Cisco GNS3 Network Infrastructure – Enterprise Project
+# 🧠 Network Design and Implementation – GNS3 Project
 
-This repository contains a complete enterprise network design and implementation project developed using **Cisco IOS**, **GNS3**, and open-source systems such as **AlmaLinux** and **Ubuntu**.
-
-## 📁 Project Files Included
-
-| File | Description |
-|------|-------------|
-| `Network Design and Implementation Project.pdf` | Full project report including requirements, design decisions, and implementation plan |
-| `Network Design and Implementation Tests.pdf` | Functional tests for validating DHCP, DNS, FTP, NTP, Apache, and access restrictions |
-| `Project 1 - Guillermo PK - Configurations.pdf` | Raw Cisco IOS configurations, Linux service configurations, and CLI outputs |
-| `Network Visual Topology.png` | High-resolution topology map of the enterprise network |
-| `project.gns3` | GNS3 project file (requires external IOS/QEMU images on your local setup) |
+This repository showcases a full network infrastructure project designed and tested using GNS3. It includes network topology, configuration files, base images used in the simulation, and full documentation of implementation and testing.
 
 ---
 
-## 🧠 Project Overview
+## 📁 Repository Overview
 
-This project simulates a real-world network connecting **Montreal** and **Toronto** sites with:
-- VLAN segmentation (IT, HR, Sales, VoIP)
-- DHCP, DNS, FTP, Apache, NTP services
-- Cisco Voice (CME)
-- Firewall and NAT configuration
-- Subnetting and Inter-VLAN Routing
-- Access Control (ACLs, user restrictions, file types)
-- Static and dynamic routing (RIPv2 and static)
-- Authentication and Authorization via Apache and Linux file permissions
+| Folder | Description |
+|--------|-------------|
+| `GNS3-Project/` | Contains the GNS3 project file (`project.gns3`) used to recreate the network. |
+| `Documentation/` | Includes the planning document, test plan, and the final configuration guide. |
+| `Topology/` | Network diagram showing the full logical topology for Montreal and Toronto sites. |
+| `Images-and-VMs/` | Base Cisco images, QEMU VMs, and cloud-init ISO used in the lab environment. |
 
 ---
 
-## 🖥 Technologies Used
+## 🖼️ Network Topology
 
-- **Cisco IOSv Routers and Switches (GNS3)**
-- **AlmaLinux** (Web, FTP, DNS, NTP servers)
-- **Ubuntu Clients** (PC1, PC2, etc.)
-- **Apache2** with subnet and user-based access controls
-- **FileZilla, Evolution Mail, and CLI tools** for validation
-- **Cisco IP Phones** for VoIP (VLAN40)
+![Network Topology](Topology/Network%20Visual%20Topology.png)
 
 ---
 
-## 🧪 Key Services Configured
+## 🧰 Included Files
 
-| Service | Technology |
-|--------|------------|
-| DHCP | ISC DHCP Server & Cisco Router |
-| DNS | BIND9 |
-| FTP | VSFTPD |
-| Web Server | Apache2 |
-| NTP | Chronyd |
-| VoIP | Cisco CME |
-| Authentication | Apache Basic Auth + `.htaccess` |
-| Subnet Access | Apache `Require ip` + ACLs |
+### 🔧 Configuration and Project Files
+- `project.gns3` – The main GNS3 project file.
+- `Project 1 - Guillermo PK - Configurations.pdf` – All interface and routing configurations.
 
----
+### 📄 Documentation
+- `Network Design and Implementation Project.pdf` – Detailed project goals, IP schemes, and subnetting plan.
+- `Network Design and Implementation Tests.pdf` – All test cases and results used to validate connectivity and services.
 
-## 🔧 Requirements to Run the GNS3 Project
+### 💾 Base Images and VMs (For Educational Use)
+- `vios-adventerprisek9-m.vmdk.SPA.157-3.M3`
+- `vios_l2-adventerprisek9-m.ssa.high_iron_20190423.qcow2`
+- `c7200-adventerprisek9-mz.124-24.T5.image`
+- `Linux.GUI.qcow2`, `IOSv_startup_config.img`
+- `AlmaLinux-9-GenericCloud-9.2.qcow2` (used for server deployment)
+- `almalinux-cloud-init-data.iso`
 
-To use the `.gns3project` file:
-
-1. Install **GNS3 (v2.2+)**
-2. Ensure you have the required Cisco IOS images and linked QEMU VMs:
-   - `IOSv` for routers (15.2)
-   - `IOSv-L2` for switches
-   - QEMU VMs for **AlmaLinux** and **Ubuntu**
-3. Open GNS3 and import `project.gns3` manually
-4. Connect your images using the same **compute IDs** (already stripped from snapshots and base images)
+> ⚠️ **Note:** Due to file size and licensing, you may need to host the `/Images-and-VMs` folder separately or provide download instructions. These are not guaranteed to work out of the box without your local compute environment.
 
 ---
 
-## 🏁 Status
+## ✅ Features Implemented
 
-✅ Completed  
-📄 Documented  
-💡 Portfolio-Ready
+- Multi-site network (Montreal + Toronto)
+- VLAN segmentation (IT, Sales, HR, VoIP)
+- Inter-VLAN routing
+- DMZ web server (AlmaLinux)
+- CME VoIP routing
+- NAT and internet edge simulation
+- Connectivity tested using Ubuntu and IP phones
 
 ---
 
-## 🧑‍💻 Author
+## 🚀 Getting Started
+
+To run this lab:
+
+1. Clone the repository.
+2. Open GNS3 and import `project.gns3` from the `GNS3-Project` folder.
+3. Make sure your GNS3 VM is configured with the same Cisco/QEMU images.
+4. Refer to the `Configurations.pdf` file to verify and adjust any interface or routing setup.
+
+---
+
+## 📚 Author
 
 **Guillermo Padilla Keymole**  
-Student, Network Administration AEC  
+Student – Network Administration AEC  
 John Abbott College  
-[Portfolio Website](https://guillermopkeymole.github.io/GPKTechPortfolio/)  
+GitHub Portfolio: [guillermopkeymole.github.io/GPKTechPortfolio](https://guillermopkeymole.github.io/GPKTechPortfolio)
 
 ---
 
-## 📸 Preview
+## 📝 License
 
-![Network Topology](Network%20Visual%20Topology.png)
+Educational use only. Cisco IOS images and QEMU VMs are included for demonstration purposes and should not be redistributed.
