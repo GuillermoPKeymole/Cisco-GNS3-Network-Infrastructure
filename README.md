@@ -20,7 +20,7 @@ This GNS3-based project simulates a real-world enterprise network connecting **M
 
 ## 🖼️ Network Topology
 
-![Network Topology](Network%20Visual%20Topology.png)
+![Network Topology](Topology/Network%20Visual%20Topology.png)
 
 ---
 
