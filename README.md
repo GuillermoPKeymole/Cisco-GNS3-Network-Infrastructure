@@ -1,68 +1,90 @@
-# Cisco GNS3 Network Infrastructure Project – John Abbott College
+# Cisco GNS3 Network Infrastructure – Enterprise Project
 
-This repository showcases a **fully simulated enterprise network infrastructure** designed and implemented using **GNS3** as part of the **Network Administration AEC** program at **John Abbott College**. The project includes both a **network design blueprint** and **live validation tests**, demonstrating hands-on skills in Cisco IOS, switching, routing, voice, VPNs, and Linux services.
+This repository contains a complete enterprise network design and implementation project developed using **Cisco IOS**, **GNS3**, and open-source systems such as **AlmaLinux** and **Ubuntu**.
 
----
-
-## 🧠 Project Summary
-
-This GNS3 project demonstrates a multi-site corporate network with VLAN segmentation, OSPF routing, NAT, IPSec VPN, CME VoIP, DHCP, and external NAT access. All configurations were done from scratch using Cisco IOS CLI and Linux server/client systems.
-
----
-
-## 📂 Repository Structure
+## 📁 Project Files Included
 
 | File | Description |
 |------|-------------|
-| [`project.gns3`](./project.gns3) | GNS3 project file (without base images, for reference) |
-| [`Network Design and Implementation Project.pdf`](./Network%20Design%20and%20Implementation%20Project.pdf) | Full network design, topology diagram, addressing plan |
-| [`Project 1 - Guillermo PK - Configurations.pdf`](./Project%201%20-%20Guillermo%20PK%20-%20Configurations.pdf) | All device configurations (routers, switches, servers) |
-| [`Network Design and Implementation Tests.pdf`](./Network%20Design%20and%20Implementation%20Tests.pdf) | Validation test plan and device-specific test commands |
+| `Network Design and Implementation Project.pdf` | Full project report including requirements, design decisions, and implementation plan |
+| `Network Design and Implementation Tests.pdf` | Functional tests for validating DHCP, DNS, FTP, NTP, Apache, and access restrictions |
+| `Project 1 - Guillermo PK - Configurations.pdf` | Raw Cisco IOS configurations, Linux service configurations, and CLI outputs |
+| `Network Visual Topology.png` | High-resolution topology map of the enterprise network |
+| `project.gns3` | GNS3 project file (requires external IOS/QEMU images on your local setup) |
 
 ---
 
-## 🔧 Technologies and Skills
+## 🧠 Project Overview
 
-- **GNS3 Virtual Lab** with routers, switches, and Linux VMs
-- **Cisco IOS configuration** (RIP/OSPF, NAT, DHCP, VLAN, trunking)
-- **IPSec VPN tunnels**
-- **Cisco CME** (VoIP) setup with IP Phones
-- **AlmaLinux and Ubuntu** integration for server/client services
-- **NAT and firewall rule validation** via HTTP and SSH tests
-- **Troubleshooting with CLI tools** like `show ip route`, `show vlan`, `debug`, and `Wireshark`
-
----
-
-## ✅ Sample Validations (from Tests)
-
-- **IP reachability and NAT** between internal clients and external servers
-- **OSPF neighbor relationships and routing tables**
-- **DHCP lease bindings on R1 and R2**
-- **VoIP registration on CME with working IP Phones**
-- **IPSec VPN tunnel status and ESP packet verification**
-- **SSH/telnet and HTTP service accessibility across VLANs and sites**
+This project simulates a real-world network connecting **Montreal** and **Toronto** sites with:
+- VLAN segmentation (IT, HR, Sales, VoIP)
+- DHCP, DNS, FTP, Apache, NTP services
+- Cisco Voice (CME)
+- Firewall and NAT configuration
+- Subnetting and Inter-VLAN Routing
+- Access Control (ACLs, user restrictions, file types)
+- Static and dynamic routing (RIPv2 and static)
+- Authentication and Authorization via Apache and Linux file permissions
 
 ---
 
-## 🔗 Live Preview and Screenshots
+## 🖥 Technologies Used
 
-For visual reference and screenshots, view this project under the **Projects** section of my portfolio:  
-📁 [https://guillermopkeymole.github.io/GPKTechPortfolio](https://guillermopkeymole.github.io/GPKTechPortfolio)
+- **Cisco IOSv Routers and Switches (GNS3)**
+- **AlmaLinux** (Web, FTP, DNS, NTP servers)
+- **Ubuntu Clients** (PC1, PC2, etc.)
+- **Apache2** with subnet and user-based access controls
+- **FileZilla, Evolution Mail, and CLI tools** for validation
+- **Cisco IP Phones** for VoIP (VLAN40)
 
 ---
 
-## 👨‍💻 Author
+## 🧪 Key Services Configured
+
+| Service | Technology |
+|--------|------------|
+| DHCP | ISC DHCP Server & Cisco Router |
+| DNS | BIND9 |
+| FTP | VSFTPD |
+| Web Server | Apache2 |
+| NTP | Chronyd |
+| VoIP | Cisco CME |
+| Authentication | Apache Basic Auth + `.htaccess` |
+| Subnet Access | Apache `Require ip` + ACLs |
+
+---
+
+## 🔧 Requirements to Run the GNS3 Project
+
+To use the `.gns3project` file:
+
+1. Install **GNS3 (v2.2+)**
+2. Ensure you have the required Cisco IOS images and linked QEMU VMs:
+   - `IOSv` for routers (15.2)
+   - `IOSv-L2` for switches
+   - QEMU VMs for **AlmaLinux** and **Ubuntu**
+3. Open GNS3 and import `project.gns3` manually
+4. Connect your images using the same **compute IDs** (already stripped from snapshots and base images)
+
+---
+
+## 🏁 Status
+
+✅ Completed  
+📄 Documented  
+💡 Portfolio-Ready
+
+---
+
+## 🧑‍💻 Author
 
 **Guillermo Padilla Keymole**  
-AEC – Network Administration  
+Student, Network Administration AEC  
 John Abbott College  
-📍 Montreal, Canada
+[Portfolio Website](https://guillermopkeymole.github.io/GPKTechPortfolio/)  
 
 ---
 
-## 🌐 Connect
+## 📸 Preview
 
-- [GitHub Portfolio](https://github.com/GuillermoPKeymole)
-- [LinkedIn](https://www.linkedin.com/in/guillermo-padilla-keymole-a24328363)
-
----
+![Network Topology](Network%20Visual%20Topology.png)
