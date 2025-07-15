@@ -24,6 +24,33 @@ This GNS3-based project simulates a real-world enterprise network connecting **M
 
 ---
 
+## 🖥 Technologies Used
+
+- **GNS3** (v2.2+) Network Emulator
+- **Cisco IOSv Routers and IOSv-L2 Switches**
+- **Cisco C7200 Router**
+- **Cisco IP Phones (VLAN 40) + CME**
+- **AlmaLinux** for web and SSH services
+- **Ubuntu Clients** for user testing and validation
+- **Apache2**, DHCP, DNS, SSH
+
+---
+
+## 🧪 Key Services Configured
+
+| Service | Technology |
+|--------|------------|
+| DHCP | Cisco IOS Router |
+| DNS | Ubuntu with BIND9 |
+| Web Server | Apache2 |
+| NTP | Chrony (AlmaLinux) |
+| VoIP | Cisco CME |
+| NAT & VPN | Cisco Routers |
+| SSH Access | Linux Servers |
+| VLAN/ACLs | Cisco Switches |
+
+---
+
 ## 🧰 Included Files
 
 ### 🔧 Configuration and Project Files
@@ -50,33 +77,6 @@ These files are required to run the GNS3 project. Due to size limitations, they 
 | `almalinux-cloud-init-data.iso` | Cloud-init ISO used to preconfigure AlmaLinux VMs |
 
 You must manually add and associate these images within GNS3 before running the project.
-
----
-
-## 🖥 Technologies Used
-
-- **GNS3** (v2.2+) Network Emulator
-- **Cisco IOSv Routers and IOSv-L2 Switches**
-- **Cisco C7200 Router**
-- **Cisco IP Phones (VLAN 40) + CME**
-- **AlmaLinux** for web and SSH services
-- **Ubuntu Clients** for user testing and validation
-- **Apache2**, DHCP, DNS, SSH
-
----
-
-## 🧪 Key Services Configured
-
-| Service | Technology |
-|--------|------------|
-| DHCP | Cisco IOS Router |
-| DNS | Ubuntu with BIND9 |
-| Web Server | Apache2 |
-| NTP | Chrony (AlmaLinux) |
-| VoIP | Cisco CME |
-| NAT & VPN | Cisco Routers |
-| SSH Access | Linux Servers |
-| VLAN/ACLs | Cisco Switches |
 
 ---
 
