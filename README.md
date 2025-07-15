@@ -17,7 +17,7 @@ This repository showcases a full network infrastructure project designed and tes
 
 ## 🖼️ Network Topology
 
-![Network Topology](Topology/Network%20Visual%20Topology.png)
+![Network Topology](Network%20Visual%20Topology.png)
 
 ---
 
